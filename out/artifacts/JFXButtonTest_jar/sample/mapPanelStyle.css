@@ -1,0 +1,85 @@
+#newGamePanel{
+
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#backgroundImageView{
+  -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#settingsPanel{
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+    -fx-font-size: 20pt;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+   }
+
+
+
+#settingsCheckbox{
+    -fx-text-fill: black;
+}
+
+#sectorTitleLabel{
+-fx-font-size: 24pt;
+        -fx-text-fill: black;
+        -fx-font-weight: bold;
+
+}
+
+#sectorDescriptionLabel{
+    -fx-font-size: 16pt;
+        -fx-text-fill: black;
+        -fx-font-weight: bold;
+}
+
+#dateLabel{
+       -fx-font-size: 16pt;
+       -fx-text-fill: black;
+      -fx-font-weight: bold;
+      -fx-background-repeat: stretch;
+      -fx-background-size: 100% 100%;
+      -fx-background-position: center center;
+}
+
+
+
+
+
+.button{
+       -fx-font-size: 16pt;
+       -fx-text-fill: white;
+       -fx-effect: dropshadow(three-pass-box, black, 10,0,0,0);
+       -fx-background-repeat: stretch;
+       -fx-background-size: 100% 100%;
+       -fx-background-position: center center;
+       -fx-shape: "M 465 260 L 530 300 L 530 370 L 465 410 L 400 370 L 400 300 Z";
+       -fx-background-color: green;
+}
+
+#exit_button{
+    -fx-background-size: 100% 100%;
+    -fx-font-size: 25pt;
+    -fx-text-fill: red;
+    -fx-font-weight: bold;
+}
+
+
+#b11{
+  -fx-background-repeat: stretch;
+       -fx-background-size: 100% 100%;
+       -fx-background-position: center center;
+}
+
+
+
+

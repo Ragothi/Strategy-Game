@@ -1,0 +1,60 @@
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<AnchorPane id="newGamePanel" fx:id="newGamePanel" fx:controller="sample.MapController" xmlns:fx="http://javafx.com/fxml"
+            stylesheets="@mapPanelStyle.css" >
+    <ImageView fx:id="backgroundImageView" id="backgroundImageView" fitWidth="1920" fitHeight="1080">
+    </ImageView>
+
+
+
+    <VBox spacing="20" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="30" >
+        <JFXButton text="City" prefHeight="80" prefWidth="220" onAction="#openCityPanel">
+
+        </JFXButton>
+        <JFXButton text="Army" prefHeight="80" prefWidth="220" onAction="#openArmyScreen">
+
+        </JFXButton>
+
+        <JFXButton text="Settings" prefHeight="80" prefWidth="220" onAction="#settingsOn"/>
+        <JFXButton text="Next Turn" prefHeight="80" prefWidth="220" onAction="#changeDate" />
+    </VBox>
+    <Label fx:id="dateLabel" id="dateLabel" prefHeight="80" prefWidth="220" wrapText="true" AnchorPane.rightAnchor="10"
+           AnchorPane.bottomAnchor="20"/>
+
+    <AnchorPane fx:id="settingsPanel" visible="false" id="settingsPanel"
+               prefHeight="500" prefWidth="900"  maxWidth="900" maxHeight="500" AnchorPane.topAnchor="200"
+               AnchorPane.leftAnchor="300">
+        <VBox spacing="20" AnchorPane.leftAnchor="100" AnchorPane.topAnchor="30">
+            <JFXCheckBox fx:id="fullScreenCheckBox"  id="settingsCheckbox" text="FullScreen mode on?" onAction="#fullScreenOn" selected="true"/>
+            <JFXCheckBox fx:id="tooltipsOn"  id="settingsCheckbox" text="Disable sector tooltips?" />
+            <HBox>
+                <Label text="Music Volume: " id="settingsCheckbox"/>
+                <Slider fx:id="volume" onMouseDragged="#changeVolume" snapToTicks="true"
+                        max="1" value="0.2" majorTickUnit="0.01" minorTickCount="0"  blockIncrement="0.01" minWidth="250"/>
+            </HBox>
+        </VBox>
+        <HBox spacing="50" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="30">
+            <JFXButton id="settings_close" text="MainMenu" onAction="#MainMenu" prefHeight="80" prefWidth="250"/>
+            <JFXButton  text="EXIT" fx:id="exit_button"  id="exit_button" onAction="#exitButton" prefHeight="80" prefWidth="250" />
+            <JFXButton id="settings_close" text="Close" onAction="#settingsOff" prefHeight="80" prefWidth="250"/>
+        </HBox>
+
+    </AnchorPane>
+
+    <AnchorPane fx:id="sectorPanel" visible="false" id="settingsPanel"
+                prefHeight="600" prefWidth="500"   AnchorPane.topAnchor="150"
+                AnchorPane.leftAnchor="450">
+        <Label fx:id="sectorTitleLabel" id="sectorTitleLabel" AnchorPane.leftAnchor="80" AnchorPane.topAnchor="30" />
+        <Label fx:id="sectorDescriptionLabel" id="sectorDescriptionLabel" AnchorPane.leftAnchor="40" AnchorPane.topAnchor="80" />
+
+        <JFXButton fx:id="sectorClose" id="settings_close" text="Cancel" onAction="#sectorPanelOff" prefHeight="60" prefWidth="180"
+                   AnchorPane.bottomAnchor="40" AnchorPane.rightAnchor="50"/>
+        <JFXButton fx:id="attackSectorButton" id="attackSector" text="Attack" onAction="#attackSector" prefHeight="60" prefWidth="180"
+                   AnchorPane.bottomAnchor="40" AnchorPane.leftAnchor="50"/>
+    </AnchorPane>
+
+    
+    
+</AnchorPane>

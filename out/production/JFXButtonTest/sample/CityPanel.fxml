@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Slider?>
+<AnchorPane fx:id="cityPanel" id="cityPanel" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.CityPanelControl" stylesheets="@cityPanelStyle.css" >
+    <ImageView fx:id="backgroundImageView" id="backgroundImageView" fitWidth="Infinity" fitHeight="Infinity">
+    </ImageView>
+
+    <JFXButton text="Close" fx:id="close1" id="exit_button" AnchorPane.rightAnchor="50" AnchorPane.topAnchor="50" onAction="#exitButton"/>
+
+    <AnchorPane  id="resourcePanel" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="480"
+                     prefWidth="600" prefHeight="80">
+                <Label fx:id="cityNameLabel" text="City Name" AnchorPane.topAnchor="5" AnchorPane.leftAnchor="20" id="cityNameLabel"/>
+    </AnchorPane>
+
+    <HBox spacing="50" AnchorPane.leftAnchor="50" AnchorPane.topAnchor="130">
+        <AnchorPane  id="resourcePanel" prefWidth="450" prefHeight="700" minWidth="450" minHeight="700"
+                     maxWidth="450" maxHeight="700">
+            <JFXButton text="Manage Resources Production" id="manageResourcesButton" AnchorPane.topAnchor="30"
+                       AnchorPane.leftAnchor="50" prefWidth="350" prefHeight="50" onAction="#openMineBuildingsPanel"/>
+            
+            <HBox AnchorPane.leftAnchor="30" AnchorPane.bottomAnchor="50">
+                <VBox spacing="30" >
+                    <Label text="Res" />
+                    <Label fx:id="resT11Label1" />
+                    <Label fx:id="resT12Label1" />
+                    <Label fx:id="resT13Label1" />
+                    <Label fx:id="resT21Label1" />
+                    <Label fx:id="resT22Label1" />
+                    <Label fx:id="resT3Label1" />
+                    <Label fx:id="resGoldLabel1" />
+                </VBox>
+                <VBox spacing="30">
+                    <Label text="Amount      " alignment="CENTER"/>
+                    <Label fx:id="resT11Label2" />
+                    <Label fx:id="resT12Label2" />
+                    <Label fx:id="resT13Label2" />
+                    <Label fx:id="resT21Label2" />
+                    <Label fx:id="resT22Label2" />
+                    <Label fx:id="resT3Label2" />
+                    <Label fx:id="resGoldLabel2" />
+                </VBox>
+                <VBox spacing="30">
+                    <Label text="+/turn"/>
+                    <Label fx:id="resT11Label3" />
+                    <Label fx:id="resT12Label3" />
+                    <Label fx:id="resT13Label3" />
+                    <Label fx:id="resT21Label3" />
+                    <Label fx:id="resT22Label3" />
+                    <Label fx:id="resT3Label3" />
+                    <Label fx:id="resGoldLabel3" />
+                </VBox>
+            </HBox>
+            
+
+        </AnchorPane>
+
+        <AnchorPane  id="resourcePanel" prefWidth="450" prefHeight="700" minWidth="450" minHeight="700"
+                     maxWidth="450" maxHeight="700">
+            <JFXButton text="Manage Army Buildings" id="manageResourcesButton" AnchorPane.topAnchor="30"
+                       AnchorPane.leftAnchor="50" prefWidth="350" prefHeight="50" onAction="#openArmyBuildingsPanel"/>
+            <HBox AnchorPane.leftAnchor="30" AnchorPane.topAnchor="130" spacing="20">
+                <VBox spacing="20" >
+                    <Label text="Unit" />
+                    <Label fx:id="unitT11Label1" visible="false" />
+                    <Label fx:id="unitT12Label1" visible="false" />
+                    <Label fx:id="unitT21Label1" visible="false" />
+                    <Label fx:id="unitT22Label1" visible="false" />
+                    <Label fx:id="unitT23Label1" visible="false" />
+                    <Label fx:id="unitT31Label1" visible="false" />
+                    <Label fx:id="unitT32Label1" visible="false" />
+                    <Label fx:id="unitT4Label1"  visible="false" />
+                </VBox>
+                <VBox spacing="20">
+                    <Label text="Have" alignment="CENTER" />
+                    <Label fx:id="unitT11Label2" visible="false" />
+                    <Label fx:id="unitT12Label2" visible="false" />
+                    <Label fx:id="unitT21Label2" visible="false" />
+                    <Label fx:id="unitT22Label2" visible="false" />
+                    <Label fx:id="unitT23Label2" visible="false" />
+                    <Label fx:id="unitT31Label2" visible="false" />
+                    <Label fx:id="unitT32Label2" visible="false" />
+                    <Label fx:id="unitT4Label2"  visible="false"/>
+                </VBox>
+            </HBox>
+            
+        </AnchorPane>
+
+        <AnchorPane  id="resourcePanel"  prefWidth="450" prefHeight="700" minWidth="450" minHeight="700"
+                     maxWidth="450" maxHeight="700">
+            <JFXButton text="Manage Defensive Buildings" id="manageResourcesButton" AnchorPane.topAnchor="30"
+                       AnchorPane.leftAnchor="50" prefWidth="350" prefHeight="50"/>
+        </AnchorPane>
+    </HBox>
+
+    <AnchorPane fx:id="buildMinePanel" id="resourcePanel" visible="false" prefWidth="1450" prefHeight="800"
+                    AnchorPane.leftAnchor="50" AnchorPane.topAnchor="20">
+        <JFXButton text="Close" fx:id="close2" id="exit_button" AnchorPane.rightAnchor="130" AnchorPane.topAnchor="50" onAction="#closeMineBuildingsPanel"/>
+
+        <AnchorPane id="resourcePanel" prefWidth="1020" prefHeight="200" AnchorPane.leftAnchor="60" AnchorPane.topAnchor="70"
+                        maxHeight="200" maxWidth="1020">
+
+            <HBox spacing="30" AnchorPane.leftAnchor="20" AnchorPane.topAnchor="20">
+                <Label fx:id="workName" id="smallLabel" text="house name"/>
+                <VBox spacing="20">
+                    <Label fx:id="workPrice4Next" id="smallLabel" text="Price for next " wrapText="true"
+                                 prefWidth="120"/>
+                    <Label fx:id="workPrice" id="smallLabel" text="price amount" wrapText="true"/>
+                    <JFXButton fx:id="buyHouse" id="recButton" text="BUY" prefWidth="120" prefHeight="40" onAction="#manageWorkers">
+                        <tooltip>
+                            <Tooltip text="Each house gives 3 workers and each worker gives 10 gold/turn" wrapText="true"/>
+                        </tooltip>
+                    </JFXButton>
+                </VBox>
+                <VBox spacing="20">
+                    <Label fx:id="workHouseAmountName" id="smallLabel" text="house amount" wrapText="true"
+                            prefWidth="120" />
+                    <Label fx:id="workHouseAmount" id="smallLabel" text="value"/>
+                </VBox>
+                <VBox spacing="20">
+                    <Label id="smallLabel" text="Total Workers" wrapText="true"
+                            prefWidth="100"/>
+                    <Label fx:id="workTotalWorkers" id="smallLabel" text="value"/>
+                </VBox>
+                <VBox spacing="50">
+                    <Label id="smallLabel" text="Free Workers" wrapText="true"
+                            prefWidth="120"/>
+                    <Label fx:id="workFreeWorkers" id="smallLabel" text="value"/>
+                </VBox>
+                <VBox spacing="30">
+                    <Label id="smallLabel" text="Free to mine" wrapText="true"
+                              prefWidth="120"/>
+                    <Label fx:id="workSetToMine" id="smallLabel" text="value"/>
+                    <HBox spacing="10">
+                        <JFXButton fx:id="subMineWorker" id="smallLabel" text="-" prefWidth="40" prefHeight="40" onAction="#manageWorkers"/>
+                        <JFXButton fx:id="addMineWorker" id="smallLabel" text="+" prefWidth="40" prefHeight="40" onAction="#manageWorkers"/>
+                    </HBox>
+                </VBox>
+                <VBox spacing="30">
+                    <Label id="smallLabel" text="Paying taxes" wrapText="true"
+                            prefWidth="120"/>
+                    <Label fx:id="workSetToGoldMine" id="smallLabel" text="value"/>
+                        <HBox spacing="10">
+                            <JFXButton fx:id="subArmyWorker" id="smallLabel" text="-" prefWidth="40" prefHeight="40" onAction="#manageWorkers"/>
+                            <JFXButton fx:id="addArmyWorker" id="smallLabel" text="+" prefWidth="40" prefHeight="40" onAction="#manageWorkers"/>
+                        </HBox>
+
+                </VBox>
+            </HBox>
+        </AnchorPane>
+
+    <VBox spacing="50" AnchorPane.leftAnchor="70" AnchorPane.bottomAnchor="50">
+        <HBox spacing="50">
+                <AnchorPane id="resourcePanel" prefHeight="200" prefWidth="300">
+                    <Label text="name" fx:id="T11mineName" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"/>
+                    <Label text="price" fx:id="T11minePrice" AnchorPane.topAnchor="60" AnchorPane.leftAnchor="20">
+                        <tooltip>
+                            <Tooltip fx:id="T11minePriceTooltip" text="Wood: 5 Stone 24"/>
+                        </tooltip>
+                    </Label>
+
+                    <JFXButton fx:id="buyT11mine" id="recButton" text="BUY" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="50"
+                                prefWidth="200" prefHeight="40" onAction="#buyMine"/>
+                    <Label fx:id="T11mineBought" text="Bought" visible="false" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="50"/>
+                </AnchorPane>
+            <AnchorPane id="resourcePanel" prefHeight="200" prefWidth="300">
+                <Label text="name" fx:id="T12mineName" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"/>
+                <Label text="price" fx:id="T12minePrice" AnchorPane.topAnchor="60" AnchorPane.leftAnchor="20"/>
+                <JFXButton fx:id="buyT12mine" id="recButton" text="BUY" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="50"
+                           prefWidth="200" prefHeight="40" onAction="#buyMine"/>
+                <Label fx:id="T12mineBought" text="Bought" visible="false" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="50"/>
+            </AnchorPane>
+            <AnchorPane id="resourcePanel" prefHeight="200" prefWidth="300">
+                <Label text="name" fx:id="T13mineName" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"/>
+                <Label text="price" fx:id="T13minePrice" AnchorPane.topAnchor="60" AnchorPane.leftAnchor="20"/>
+                <JFXButton fx:id="buyT13mine" id="recButton" text="BUY" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="50"
+                           prefWidth="200" prefHeight="40" onAction="#buyMine"/>
+                <Label fx:id="T13mineBought" text="Bought" visible="false" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="50"/>
+            </AnchorPane>
+        </HBox>
+        <HBox spacing="50">
+            <AnchorPane id="resourcePanel" prefHeight="200" prefWidth="300">
+                <Label text="name" fx:id="T21mineName" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"/>
+                <Label text="price" fx:id="T21minePrice" AnchorPane.topAnchor="60" AnchorPane.leftAnchor="20"/>
+                <JFXButton fx:id="buyT21mine" id="recButton" text="BUY" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="50"
+                           prefWidth="200" prefHeight="40" onAction="#buyMine"/>
+                <Label fx:id="T21mineBought" text="Bought" visible="false" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="50"/>
+            </AnchorPane>
+            <AnchorPane id="resourcePanel" prefHeight="200" prefWidth="300">
+                <Label text="name" fx:id="T22mineName" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"/>
+                <Label text="price" fx:id="T22minePrice" AnchorPane.topAnchor="60" AnchorPane.leftAnchor="20"/>
+                <JFXButton fx:id="buyT22mine" id="recButton" text="BUY" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="50"
+                           prefWidth="200" prefHeight="40" onAction="#buyMine"/>
+                <Label fx:id="T22mineBought" text="Bought" visible="false" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="50"/>
+            </AnchorPane>
+            <AnchorPane id="resourcePanel" prefHeight="200" prefWidth="300">
+                <Label text="name" fx:id="T3mineName" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"/>
+                <Label text="price" fx:id="T3minePrice" AnchorPane.topAnchor="60" AnchorPane.leftAnchor="20"/>
+                <JFXButton fx:id="buyT3mine" id="recButton" text="BUY" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="50"
+                           prefWidth="200" prefHeight="40" onAction="#buyMine"/>
+                <Label fx:id="T3mineBought" text="Bought" visible="false" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="50"/>
+            </AnchorPane>
+        </HBox>
+    </VBox>
+
+        <AnchorPane id="resourcePanel" prefHeight="600" prefWidth="300" AnchorPane.rightAnchor="50" AnchorPane.bottomAnchor="50">
+
+            <HBox spacing="5" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10">
+                <VBox spacing="55">
+                    <Label id="smallLabel" text="Resource Type" wrapText="true"  prefWidth="80" alignment="CENTER"/>
+                    <Label fx:id="resT11Label1manage" id="smallLabel" text="resource"  />
+                    <Label fx:id="resT12Label1manage" id="smallLabel" text="resource" />
+                    <Label fx:id="resT13Label1manage" id="smallLabel" text="resource" />
+                    <Label fx:id="resT21Label1manage" id="smallLabel" text="resource" />
+                    <Label fx:id="resT22Label1manage" id="smallLabel" text="resource" />
+                    <Label fx:id="resT3Label1manage" id="smallLabel" text="resource" />
+                </VBox>
+                <VBox spacing="55">
+                    <Label id="smallLabel"  text="Workers Amount" wrapText="true"  prefWidth="80" alignment="CENTER"/>
+                    <Label fx:id="resT11Label2manage" id="smallLabel" text="12"/>
+                    <Label fx:id="resT12Label2manage" id="smallLabel" text="12"/>
+                    <Label fx:id="resT13Label2manage" id="smallLabel" text="12"/>
+                    <Label fx:id="resT21Label2manage" id="smallLabel" text="12"/>
+                    <Label fx:id="resT22Label2manage" id="smallLabel" text="12"/>
+                    <Label fx:id="resT3Label2manage" id="smallLabel" text="12"/>
+                </VBox>
+                <VBox spacing="40">
+                    <Label id="smallLabel"  text="Minus" wrapText="true" prefHeight="60" prefWidth="60" alignment="CENTER"/>
+                    <JFXButton fx:id="sub1" id="smallLabel" text="-" prefWidth="40" prefHeight="40" onAction="#manageMineWorkers"/>
+                    <JFXButton fx:id="sub2" id="smallLabel" text="-" prefWidth="40" prefHeight="40" onAction="#manageMineWorkers"/>
+                    <JFXButton fx:id="sub3" id="smallLabel" text="-" prefWidth="40" prefHeight="40" onAction="#manageMineWorkers"/>
+                    <JFXButton fx:id="sub4" id="smallLabel" text="-" prefWidth="40" prefHeight="40" onAction="#manageMineWorkers"/>
+                    <JFXButton fx:id="sub5" id="smallLabel" text="-" prefWidth="40" prefHeight="40" onAction="#manageMineWorkers"/>
+                    <JFXButton fx:id="sub6" id="smallLabel" text="-" prefWidth="40" prefHeight="40" onAction="#manageMineWorkers"/>
+                </VBox>
+                <VBox spacing="40">
+                    <Label id="smallLabel"  text="Add" wrapText="true" prefHeight="60" prefWidth="40" alignment="CENTER"/>
+                    <JFXButton fx:id="add1" id="smallLabel" text="+" prefWidth="40" prefHeight="40" onAction="#manageMineWorkers"/>
+                    <JFXButton fx:id="add2" id="smallLabel" text="+" prefWidth="40" prefHeight="40" onAction="#manageMineWorkers"/>
+                    <JFXButton fx:id="add3" id="smallLabel" text="+" prefWidth="40" prefHeight="40" onAction="#manageMineWorkers"/>
+                    <JFXButton fx:id="add4" id="smallLabel" text="+" prefWidth="40" prefHeight="40" onAction="#manageMineWorkers"/>
+                    <JFXButton fx:id="add5" id="smallLabel" text="+" prefWidth="40" prefHeight="40" onAction="#manageMineWorkers"/>
+                    <JFXButton fx:id="add6" id="smallLabel" text="+" prefWidth="40" prefHeight="40" onAction="#manageMineWorkers"/>
+                </VBox>
+            </HBox>
+
+        </AnchorPane>
+
+    </AnchorPane>
+
+    <AnchorPane fx:id="fastRecruitPanel" id="resourcePanel" visible="false" prefWidth="1450" prefHeight="800"
+                AnchorPane.leftAnchor="50" AnchorPane.topAnchor="20">
+        <JFXButton fx:id="miniCloseButton"  id="miniCloseButton" prefWidth="30" prefHeight="30"
+                   AnchorPane.rightAnchor="50" AnchorPane.topAnchor="50" onAction="#openArmyBuildingsPanel"
+                   minWidth="30" minHeight="30" maxWidth="30" maxHeight="30"/>
+        <GridPane AnchorPane.leftAnchor="50" AnchorPane.topAnchor="50" hgap="20" vgap="20">
+
+            <Label   text="Unit name" id="miniUnitName" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <Label   text="Amount"    id="miniUnitName" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label   text="Amount per Week"    id="miniUnitName" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+            <Label   text="Available" id="miniUnitName" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+            <Label   text="Buy amount picker" id="miniUnitName" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+            <Label   text="Buy amount" id="miniUnitName" GridPane.rowIndex="0" GridPane.columnIndex="5"/>
+            <Label   text="Buy"       id="miniUnitName" GridPane.rowIndex="0" GridPane.columnIndex="6"/>
+
+
+            <Label fx:id="miniUnitT11Name"  text="Unit name" id="miniUnitName" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <Label fx:id="miniUnitT11Amount"  text="Unit amount" id="miniUnitName" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Label fx:id="miniUnitT11AmountPerWeek" text="Amount per Week"    id="miniUnitName" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+            <Label fx:id="miniUnitT11AmountAvailable" text="Amount available"    id="miniUnitName" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+            <Slider fx:id="miniUnitT11Slider" id="slider" prefWidth="200" min="1" max="10" majorTickUnit="1" snapToTicks="true"
+                            minorTickCount="0" GridPane.rowIndex="1" GridPane.columnIndex="4" onMouseReleased="#miniBuyAmountActualize"/>
+            <Label fx:id="miniUnitT11BuyAmount" text="Buy amount"    id="miniUnitName" GridPane.rowIndex="1" GridPane.columnIndex="5"/>
+            <JFXButton fx:id="miniUnitT11Buy" id="miniPlusButton" text="+" prefWidth="30" prefHeight="30" onAction="#miniBuyUnit"
+                           minWidth="30" minHeight="30" maxWidth="30" maxHeight="30" GridPane.rowIndex="1" GridPane.columnIndex="6"/>
+
+            <Label fx:id="miniUnitT12Name"  text="Unit name" id="miniUnitName" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <Label fx:id="miniUnitT12Amount"  text="Unit amount" id="miniUnitName" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <Label fx:id="miniUnitT12AmountPerWeek" text="Amount per Week"    id="miniUnitName" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+            <Label fx:id="miniUnitT12AmountAvailable" text="Amount available"    id="miniUnitName" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+            <Slider fx:id="miniUnitT12Slider" id="slider" prefWidth="200" min="1" max="10" majorTickUnit="1" snapToTicks="true"
+                    minorTickCount="0" GridPane.rowIndex="2" GridPane.columnIndex="4" onMouseReleased="#miniBuyAmountActualize"/>
+            <Label fx:id="miniUnitT12BuyAmount" text="Buy amount"    id="miniUnitName" GridPane.rowIndex="2" GridPane.columnIndex="5"/>
+            <JFXButton fx:id="miniUnitT12Buy" id="miniPlusButton" text="+" prefWidth="30" prefHeight="30" onAction="#miniBuyUnit"
+                       minWidth="30" minHeight="30" maxWidth="30" maxHeight="30" GridPane.rowIndex="2" GridPane.columnIndex="6"/>
+
+            <Label fx:id="miniUnitT21Name"  text="Unit name" id="miniUnitName" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <Label fx:id="miniUnitT21Amount"  text="Unit amount" id="miniUnitName" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            <Label fx:id="miniUnitT21AmountPerWeek" text="Amount per Week"    id="miniUnitName" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+            <Label fx:id="miniUnitT21AmountAvailable" text="Amount available"    id="miniUnitName" GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+            <Slider fx:id="miniUnitT21Slider" id="slider" prefWidth="200" min="1" max="10" majorTickUnit="1" snapToTicks="true"
+                    minorTickCount="0" GridPane.rowIndex="3" GridPane.columnIndex="4" onMouseReleased="#miniBuyAmountActualize"/>
+            <Label fx:id="miniUnitT21BuyAmount" text="Buy amount"    id="miniUnitName" GridPane.rowIndex="3" GridPane.columnIndex="5"/>
+            <JFXButton fx:id="miniUnitT21Buy" id="miniPlusButton" text="+" prefWidth="30" prefHeight="30" onAction="#miniBuyUnit"
+                       minWidth="30" minHeight="30" maxWidth="30" maxHeight="30" GridPane.rowIndex="3" GridPane.columnIndex="6"/>
+
+            <Label fx:id="miniUnitT22Name"  text="Unit name" id="miniUnitName" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <Label fx:id="miniUnitT22Amount"  text="Unit amount" id="miniUnitName" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            <Label fx:id="miniUnitT22AmountPerWeek" text="Amount per Week"    id="miniUnitName" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+            <Label fx:id="miniUnitT22AmountAvailable" text="Amount available"    id="miniUnitName" GridPane.rowIndex="4" GridPane.columnIndex="3"/>
+            <Slider fx:id="miniUnitT22Slider" id="slider" prefWidth="200" min="1" max="10" majorTickUnit="1" snapToTicks="true"
+                    minorTickCount="0" GridPane.rowIndex="4" GridPane.columnIndex="4" onMouseReleased="#miniBuyAmountActualize"/>
+            <Label fx:id="miniUnitT22BuyAmount" text="Buy amount"    id="miniUnitName" GridPane.rowIndex="4" GridPane.columnIndex="5"/>
+            <JFXButton fx:id="miniUnitT22Buy" id="miniPlusButton" text="+" prefWidth="30" prefHeight="30" onAction="#miniBuyUnit"
+                       minWidth="30" minHeight="30" maxWidth="30" maxHeight="30" GridPane.rowIndex="4" GridPane.columnIndex="6"/>
+
+            <Label fx:id="miniUnitT23Name"  text="Unit name" id="miniUnitName" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <Label fx:id="miniUnitT23Amount"  text="Unit amount" id="miniUnitName" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+            <Label fx:id="miniUnitT23AmountPerWeek" text="Amount per Week"    id="miniUnitName" GridPane.rowIndex="5" GridPane.columnIndex="2"/>
+            <Label fx:id="miniUnitT23AmountAvailable" text="Amount available"    id="miniUnitName" GridPane.rowIndex="5" GridPane.columnIndex="3"/>
+            <Slider fx:id="miniUnitT23Slider" id="slider" prefWidth="200" min="1" max="10" majorTickUnit="1" snapToTicks="true"
+                    minorTickCount="0" GridPane.rowIndex="5" GridPane.columnIndex="4" onMouseReleased="#miniBuyAmountActualize"/>
+            <Label fx:id="miniUnitT23BuyAmount" text="Buy amount"    id="miniUnitName" GridPane.rowIndex="5" GridPane.columnIndex="5"/>
+            <JFXButton fx:id="miniUnitT23Buy" id="miniPlusButton" text="+" prefWidth="30" prefHeight="30" onAction="#miniBuyUnit"
+                       minWidth="30" minHeight="30" maxWidth="30" maxHeight="30" GridPane.rowIndex="5" GridPane.columnIndex="6"/>
+
+            <Label fx:id="miniUnitT31Name"  text="Unit name" id="miniUnitName" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+            <Label fx:id="miniUnitT31Amount"  text="Unit amount" id="miniUnitName" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+            <Label fx:id="miniUnitT31AmountPerWeek" text="Amount per Week"    id="miniUnitName" GridPane.rowIndex="6" GridPane.columnIndex="2"/>
+            <Label fx:id="miniUnitT31AmountAvailable" text="Amount available"    id="miniUnitName" GridPane.rowIndex="6" GridPane.columnIndex="3"/>
+            <Slider fx:id="miniUnitT31Slider" id="slider" prefWidth="200" min="1" max="10" majorTickUnit="1" snapToTicks="true"
+                    minorTickCount="0" GridPane.rowIndex="6" GridPane.columnIndex="4" onMouseReleased="#miniBuyAmountActualize"/>
+            <Label fx:id="miniUnitT31BuyAmount" text="Buy amount"    id="miniUnitName" GridPane.rowIndex="6" GridPane.columnIndex="5"/>
+            <JFXButton fx:id="miniUnitT31Buy" id="miniPlusButton" text="+" prefWidth="30" prefHeight="30" onAction="#miniBuyUnit"
+                       minWidth="30" minHeight="30" maxWidth="30" maxHeight="30" GridPane.rowIndex="6" GridPane.columnIndex="6"/>
+
+            <Label fx:id="miniUnitT32Name"  text="Unit name" id="miniUnitName" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+            <Label fx:id="miniUnitT32Amount"  text="Unit amount" id="miniUnitName" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+            <Label fx:id="miniUnitT32AmountPerWeek" text="Amount per Week"    id="miniUnitName" GridPane.rowIndex="7" GridPane.columnIndex="2"/>
+            <Label fx:id="miniUnitT32AmountAvailable" text="Amount available"    id="miniUnitName" GridPane.rowIndex="7" GridPane.columnIndex="3"/>
+            <Slider fx:id="miniUnitT32Slider" id="slider" prefWidth="200" min="1" max="10" majorTickUnit="1" snapToTicks="true"
+                    minorTickCount="0" GridPane.rowIndex="7" GridPane.columnIndex="4" onMouseReleased="#miniBuyAmountActualize"/>
+            <Label fx:id="miniUnitT32BuyAmount" text="Buy amount"    id="miniUnitName" GridPane.rowIndex="7" GridPane.columnIndex="5"/>
+            <JFXButton fx:id="miniUnitT32Buy" id="miniPlusButton" text="+" prefWidth="30" prefHeight="30" onAction="#miniBuyUnit"
+                       minWidth="30" minHeight="30" maxWidth="30" maxHeight="30" GridPane.rowIndex="7" GridPane.columnIndex="6"/>
+
+            <Label fx:id="miniUnitT4Name"  text="Unit name" id="miniUnitName" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+            <Label fx:id="miniUnitT4Amount"  text="Unit amount" id="miniUnitName" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+            <Label fx:id="miniUnitT4AmountPerWeek" text="Amount per Week"    id="miniUnitName" GridPane.rowIndex="8" GridPane.columnIndex="2"/>
+            <Label fx:id="miniUnitT4AmountAvailable" text="Amount available"    id="miniUnitName" GridPane.rowIndex="8" GridPane.columnIndex="3"/>
+            <Slider fx:id="miniUnitT4Slider" id="slider" prefWidth="200" min="1" max="10" majorTickUnit="1" snapToTicks="true"
+                    minorTickCount="0" GridPane.rowIndex="8" GridPane.columnIndex="4" onMouseReleased="#miniBuyAmountActualize"/>
+            <Label fx:id="miniUnitT4BuyAmount" text="Buy amount"    id="miniUnitName" GridPane.rowIndex="8" GridPane.columnIndex="5"/>
+            <JFXButton fx:id="miniUnitT4Buy" id="miniPlusButton" text="+" prefWidth="30" prefHeight="30" onAction="#miniBuyUnit"
+                       minWidth="30" minHeight="30" maxWidth="30" maxHeight="30" GridPane.rowIndex="8" GridPane.columnIndex="6"/>
+
+        </GridPane>
+    </AnchorPane>
+
+    <AnchorPane fx:id="buildArmyPanel" id="resourcePanel" visible="false" prefWidth="1450" prefHeight="800"
+                AnchorPane.leftAnchor="50" AnchorPane.topAnchor="20">
+        <VBox spacing="50" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="50">
+
+            <HBox spacing="50">
+                <AnchorPane id="resourcePanel" prefWidth="300" prefHeight="275">
+                    <AnchorPane fx:id="armyBuildingT11" id="resourcePanel" prefWidth="300" prefHeight="275" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                    AnchorPane.rightAnchor="0" >
+                        <Label fx:id="buildingArmyT11name" id="smallLabel" text="name" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="30"
+                         prefWidth="240" prefHeight="30" textAlignment="CENTER" >
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT11descriptionTooltip" text="building description"/>
+                            </tooltip>
+                        </Label>
+                        <Label fx:id="buildingArmyT11icon" id="buildingBack" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="20"
+                                    prefWidth="260" prefHeight="150" >
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT11unitTooltip" text="Unit info window"/>
+                            </tooltip>
+                        </Label>
+                        <JFXButton  fx:id="buildingArmyT11buy" id="recButton" onAction="#buyArmyBuilding" AnchorPane.leftAnchor="50"
+                                   AnchorPane.bottomAnchor="15" prefHeight="50" prefWidth="200" text="Buy" >
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT11priceTooltip" text="Price"/>
+                            </tooltip>
+                        </JFXButton>
+                    </AnchorPane>
+                    <AnchorPane fx:id="unitT11" id="resourcePanel" prefWidth="300" prefHeight="275" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                                AnchorPane.rightAnchor="0" visible="false" >
+                        <Label fx:id="unitT11name" id="smallLabel" text="name" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="30"
+                               prefWidth="240" prefHeight="30" textAlignment="CENTER"/>
+                        <Label fx:id="unitT11icon" AnchorPane.leftAnchor="30" AnchorPane.topAnchor="50"
+                                prefHeight="150" prefWidth="150"/>
+                        <VBox spacing="5" AnchorPane.topAnchor="50" AnchorPane.rightAnchor="25">
+                            <Label fx:id="unitT11atkStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT11hpStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT11rangeStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT11movementStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT11type" id="smallLabel" text="none"/>
+                        </VBox>
+<!--                        <JFXButton fx:id="unitT11buy" text="Buy" id="recButton" AnchorPane.leftAnchor="50"-->
+<!--                                   AnchorPane.bottomAnchor="15" prefHeight="50" prefWidth="200" onAction="#buyUnit">-->
+<!--                            <tooltip>-->
+<!--                                <Tooltip fx:id="unitT11priceTooltip" text="price"/>-->
+<!--                            </tooltip>-->
+<!--                        </JFXButton>-->
+                    </AnchorPane>
+                </AnchorPane>
+
+                <AnchorPane id="resourcePanel" prefWidth="300" prefHeight="275">
+                    <AnchorPane fx:id="armyBuildingT12" id="resourcePanel" prefWidth="300" prefHeight="275" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                                AnchorPane.rightAnchor="0" >
+                        <Label fx:id="buildingArmyT12name" id="smallLabel" text="name" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="30"
+                               prefWidth="240" prefHeight="30" textAlignment="CENTER" >
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT12descriptionTooltip" text="building description"/>
+                            </tooltip>
+                        </Label>
+                        <Label fx:id="buildingArmyT12icon" id="buildingBack" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="20"
+                               prefWidth="260" prefHeight="150" >
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT12unitTooltip" text="Unit info window"/>
+                            </tooltip>
+                        </Label>
+                        <JFXButton fx:id="buildingArmyT12buy" id="recButton" onAction="#buyArmyBuilding" AnchorPane.leftAnchor="50"
+                                   AnchorPane.bottomAnchor="15" prefHeight="50" prefWidth="200" text="Buy">
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT12priceTooltip" text="Price"/>
+                            </tooltip>
+                        </JFXButton>
+                    </AnchorPane>
+                    <AnchorPane fx:id="unitT12" id="resourcePanel" prefWidth="300" prefHeight="275" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                                AnchorPane.rightAnchor="0" visible="false" >
+                        <Label fx:id="unitT12name" id="smallLabel" text="name" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="30"
+                               prefWidth="240" prefHeight="30" textAlignment="CENTER"/>
+                        <Label fx:id="unitT12icon" AnchorPane.leftAnchor="30" AnchorPane.topAnchor="50"
+                               prefHeight="150" prefWidth="150"/>
+                        <VBox spacing="5" AnchorPane.topAnchor="50" AnchorPane.rightAnchor="25">
+                            <Label fx:id="unitT12atkStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT12hpStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT12rangeStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT12movementStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT12type" id="smallLabel" text="none"/>
+                        </VBox>
+<!--                        <JFXButton fx:id="unitT12buy" text="Buy" id="recButton" AnchorPane.leftAnchor="50"-->
+<!--                                   AnchorPane.bottomAnchor="15" prefHeight="50" prefWidth="200" onAction="#buyUnit">-->
+<!--                            <tooltip>-->
+<!--                                <Tooltip fx:id="unitT12priceTooltip" text="price"/>-->
+<!--                            </tooltip>-->
+<!--                        </JFXButton>-->
+                    </AnchorPane>
+                </AnchorPane>
+
+                <AnchorPane id="resourcePanel" prefWidth="300" prefHeight="275">
+                    <AnchorPane fx:id="armyBuildingT21" id="resourcePanel" prefWidth="300" prefHeight="275" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                                AnchorPane.rightAnchor="0" >
+                        <Label fx:id="buildingArmyT21name" id="smallLabel" text="name" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="30"
+                               prefWidth="240" prefHeight="30" textAlignment="CENTER" >
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT21descriptionTooltip" text="building description"/>
+                            </tooltip>
+                        </Label>
+                        <Label fx:id="buildingArmyT21icon" id="buildingBack" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="20"
+                               prefWidth="260" prefHeight="150" >
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT21unitTooltip" text="Unit info window"/>
+                            </tooltip>
+                        </Label>
+                        <JFXButton fx:id="buildingArmyT21buy" id="recButton" onAction="#buyArmyBuilding" AnchorPane.leftAnchor="50"
+                                   AnchorPane.bottomAnchor="15" prefHeight="50" prefWidth="200" text="Buy">
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT21priceTooltip" text="Price"/>
+                            </tooltip>
+                        </JFXButton>
+                    </AnchorPane>
+                    <AnchorPane fx:id="unitT21" id="resourcePanel" prefWidth="300" prefHeight="275" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                                AnchorPane.rightAnchor="0" visible="false" >
+                        <Label fx:id="unitT21name" id="smallLabel" text="name" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="30"
+                               prefWidth="240" prefHeight="30" textAlignment="CENTER"/>
+                        <Label fx:id="unitT21icon" AnchorPane.leftAnchor="30" AnchorPane.topAnchor="50"
+                               prefHeight="150" prefWidth="150"/>
+                        <VBox spacing="5" AnchorPane.topAnchor="50" AnchorPane.rightAnchor="25">
+                            <Label fx:id="unitT21atkStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT21hpStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT21rangeStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT21movementStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT21type" id="smallLabel" text="none"/>
+                        </VBox>
+<!--                        <JFXButton fx:id="unitT21buy" text="Buy" id="recButton" AnchorPane.leftAnchor="50"-->
+<!--                                   AnchorPane.bottomAnchor="15" prefHeight="50" prefWidth="200" onAction="#buyUnit">-->
+<!--                            <tooltip>-->
+<!--                                <Tooltip fx:id="unitT21priceTooltip" text="price"/>-->
+<!--                            </tooltip>-->
+<!--                        </JFXButton>-->
+                    </AnchorPane>
+                </AnchorPane>
+
+                <AnchorPane id="resourcePanel" prefWidth="300" prefHeight="275">
+                    <AnchorPane fx:id="armyBuildingT22" id="resourcePanel" prefWidth="300" prefHeight="275" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                                AnchorPane.rightAnchor="0" >
+                        <Label fx:id="buildingArmyT22name" id="smallLabel" text="name" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="30"
+                               prefWidth="240" prefHeight="30" textAlignment="CENTER" >
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT22descriptionTooltip" text="building description"/>
+                            </tooltip>
+                        </Label>
+                        <Label fx:id="buildingArmyT22icon" id="buildingBack" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="20"
+                               prefWidth="260" prefHeight="150" >
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT22unitTooltip" text="Unit info window"/>
+                            </tooltip>
+                        </Label>
+                        <JFXButton fx:id="buildingArmyT22buy" id="recButton" onAction="#buyArmyBuilding" AnchorPane.leftAnchor="50"
+                                   AnchorPane.bottomAnchor="15" prefHeight="50" prefWidth="200" text="Buy">
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT22priceTooltip" text="Price"/>
+                            </tooltip>
+                        </JFXButton>
+                    </AnchorPane>
+                    <AnchorPane fx:id="unitT22" id="resourcePanel" prefWidth="300" prefHeight="275" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                                AnchorPane.rightAnchor="0" visible="false" >
+                        <Label fx:id="unitT22name" id="smallLabel" text="name" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="30"
+                               prefWidth="240" prefHeight="30" textAlignment="CENTER"/>
+                        <Label fx:id="unitT22icon" AnchorPane.leftAnchor="30" AnchorPane.topAnchor="50"
+                               prefHeight="150" prefWidth="150"/>
+                        <VBox spacing="5" AnchorPane.topAnchor="50" AnchorPane.rightAnchor="25">
+                            <Label fx:id="unitT22atkStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT22hpStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT22rangeStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT22movementStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT22type" id="smallLabel" text="none"/>
+                        </VBox>
+<!--                        <JFXButton fx:id="unitT22buy" text="Buy" id="recButton" AnchorPane.leftAnchor="50"-->
+<!--                                   AnchorPane.bottomAnchor="15" prefHeight="50" prefWidth="200" onAction="#buyUnit">-->
+<!--                            <tooltip>-->
+<!--                                <Tooltip fx:id="unitT22priceTooltip" text="price"/>-->
+<!--                            </tooltip>-->
+<!--                        </JFXButton>-->
+                    </AnchorPane>
+                </AnchorPane>
+                
+            </HBox>
+
+            <HBox spacing="50">
+
+                <AnchorPane id="resourcePanel" prefWidth="300" prefHeight="275">
+                    <AnchorPane fx:id="armyBuildingT23" id="resourcePanel" prefWidth="300" prefHeight="275" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                                AnchorPane.rightAnchor="0" >
+                        <Label fx:id="buildingArmyT23name" id="smallLabel" text="name" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="30"
+                               prefWidth="240" prefHeight="30" textAlignment="CENTER" >
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT23descriptionTooltip" text="building description"/>
+                            </tooltip>
+                        </Label>
+                        <Label fx:id="buildingArmyT23icon" id="buildingBack" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="20"
+                               prefWidth="260" prefHeight="150" >
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT23unitTooltip" text="Unit info window"/>
+                            </tooltip>
+                        </Label>
+                        <JFXButton fx:id="buildingArmyT23buy" id="recButton" onAction="#buyArmyBuilding" AnchorPane.leftAnchor="50"
+                                   AnchorPane.bottomAnchor="15" prefHeight="50" prefWidth="200" text="Buy">
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT23priceTooltip" text="Price"/>
+                            </tooltip>
+                        </JFXButton>
+                    </AnchorPane>
+                    <AnchorPane fx:id="unitT23" id="resourcePanel" prefWidth="300" prefHeight="275" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                                AnchorPane.rightAnchor="0" visible="false" >
+                        <Label fx:id="unitT23name" id="smallLabel" text="name" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="30"
+                               prefWidth="240" prefHeight="30" textAlignment="CENTER"/>
+                        <Label fx:id="unitT23icon" AnchorPane.leftAnchor="30" AnchorPane.topAnchor="50"
+                               prefHeight="150" prefWidth="150"/>
+                        <VBox spacing="5" AnchorPane.topAnchor="50" AnchorPane.rightAnchor="25">
+                            <Label fx:id="unitT23atkStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT23hpStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT23rangeStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT23movementStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT23type" id="smallLabel" text="none"/>
+                        </VBox>
+<!--                        <JFXButton fx:id="unitT23buy" text="Buy" id="recButton" AnchorPane.leftAnchor="50"-->
+<!--                                   AnchorPane.bottomAnchor="15" prefHeight="50" prefWidth="200" onAction="#buyUnit">-->
+<!--                            <tooltip>-->
+<!--                                <Tooltip fx:id="unitT23priceTooltip" text="price"/>-->
+<!--                            </tooltip>-->
+<!--                        </JFXButton>-->
+                    </AnchorPane>
+                </AnchorPane>
+
+                <AnchorPane id="resourcePanel" prefWidth="300" prefHeight="275">
+                    <AnchorPane fx:id="armyBuildingT31" id="resourcePanel" prefWidth="300" prefHeight="275" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                                AnchorPane.rightAnchor="0" >
+                        <Label fx:id="buildingArmyT31name" id="smallLabel" text="name" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="30"
+                               prefWidth="240" prefHeight="30" textAlignment="CENTER" >
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT31descriptionTooltip" text="building description"/>
+                            </tooltip>
+                        </Label>
+                        <Label fx:id="buildingArmyT31icon" id="buildingBack" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="20"
+                               prefWidth="260" prefHeight="150" >
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT31unitTooltip" text="Unit info window"/>
+                            </tooltip>
+                        </Label>
+                        <JFXButton fx:id="buildingArmyT31buy" id="recButton" onAction="#buyArmyBuilding" AnchorPane.leftAnchor="50"
+                                   AnchorPane.bottomAnchor="15" prefHeight="50" prefWidth="200" text="Buy">
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT31priceTooltip" text="Price"/>
+                            </tooltip>
+                        </JFXButton>
+                    </AnchorPane>
+                    <AnchorPane fx:id="unitT31" id="resourcePanel" prefWidth="300" prefHeight="275" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                                AnchorPane.rightAnchor="0" visible="false" >
+                        <Label fx:id="unitT31name" id="smallLabel" text="name" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="30"
+                               prefWidth="240" prefHeight="30" textAlignment="CENTER"/>
+                        <Label fx:id="unitT31icon" AnchorPane.leftAnchor="30" AnchorPane.topAnchor="50"
+                               prefHeight="150" prefWidth="150"/>
+                        <VBox spacing="5" AnchorPane.topAnchor="50" AnchorPane.rightAnchor="25">
+                            <Label fx:id="unitT31atkStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT31hpStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT31rangeStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT31movementStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT31type" id="smallLabel" text="none"/>
+                        </VBox>
+<!--                        <JFXButton fx:id="unitT31buy" text="Buy" id="recButton" AnchorPane.leftAnchor="50"-->
+<!--                                   AnchorPane.bottomAnchor="15" prefHeight="50" prefWidth="200" onAction="#buyUnit">-->
+<!--                            <tooltip>-->
+<!--                                <Tooltip fx:id="unitT31priceTooltip" text="price"/>-->
+<!--                            </tooltip>-->
+<!--                        </JFXButton>-->
+                    </AnchorPane>
+                </AnchorPane>
+
+                <AnchorPane id="resourcePanel" prefWidth="300" prefHeight="275">
+                         <AnchorPane fx:id="armyBuildingT32" id="resourcePanel" prefWidth="300" prefHeight="275" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                                     AnchorPane.rightAnchor="0" >
+                             <Label fx:id="buildingArmyT32name" id="smallLabel" text="name" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="30"
+                                    prefWidth="240" prefHeight="30" textAlignment="CENTER" >
+                                 <tooltip>
+                                     <Tooltip fx:id="buildingArmyT32descriptionTooltip" text="building description"/>
+                                 </tooltip>
+                             </Label>
+                             <Label fx:id="buildingArmyT32icon" id="buildingBack" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="20"
+                                    prefWidth="260" prefHeight="150" >
+                                 <tooltip>
+                                     <Tooltip fx:id="buildingArmyT32unitTooltip" text="Unit info window"/>
+                                 </tooltip>
+                             </Label>
+                             <JFXButton fx:id="buildingArmyT32buy" id="recButton" onAction="#buyArmyBuilding" AnchorPane.leftAnchor="50"
+                                        AnchorPane.bottomAnchor="15" prefHeight="50" prefWidth="200" text="Buy">
+                                 <tooltip>
+                                     <Tooltip fx:id="buildingArmyT32priceTooltip" text="Price"/>
+                                 </tooltip>
+                             </JFXButton>
+                         </AnchorPane>
+                         <AnchorPane fx:id="unitT32" id="resourcePanel" prefWidth="300" prefHeight="275" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                                     AnchorPane.rightAnchor="0" visible="false" >
+                             <Label fx:id="unitT32name" id="smallLabel" text="name" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="30"
+                                    prefWidth="240" prefHeight="30" textAlignment="CENTER"/>
+                             <Label fx:id="unitT32icon" AnchorPane.leftAnchor="30" AnchorPane.topAnchor="50"
+                                    prefHeight="150" prefWidth="150"/>
+                             <VBox spacing="5" AnchorPane.topAnchor="50" AnchorPane.rightAnchor="25">
+                                 <Label fx:id="unitT32atkStat" id="smallLabel" text="1"/>
+                                 <Label fx:id="unitT32hpStat" id="smallLabel" text="1"/>
+                                 <Label fx:id="unitT32rangeStat" id="smallLabel" text="1"/>
+                                 <Label fx:id="unitT32movementStat" id="smallLabel" text="1"/>
+                                 <Label fx:id="unitT32type" id="smallLabel" text="none"/>
+                             </VBox>
+<!--                             <JFXButton fx:id="unitT32buy" text="Buy" id="recButton" AnchorPane.leftAnchor="50"-->
+<!--                                        AnchorPane.bottomAnchor="15" prefHeight="50" prefWidth="200" onAction="#buyUnit">-->
+<!--                                 <tooltip>-->
+<!--                                     <Tooltip fx:id="unitT32priceTooltip" text="price"/>-->
+<!--                                 </tooltip>-->
+<!--                             </JFXButton>-->
+                         </AnchorPane>
+                </AnchorPane>
+
+                <AnchorPane id="resourcePanel" prefWidth="300" prefHeight="275">
+                    <AnchorPane fx:id="armyBuildingT4" id="resourcePanel" prefWidth="300" prefHeight="275" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                                AnchorPane.rightAnchor="0" >
+                        <Label fx:id="buildingArmyT4name" id="smallLabel" text="name" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="30"
+                               prefWidth="240" prefHeight="30" textAlignment="CENTER" >
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT4descriptionTooltip" text="building description"/>
+                            </tooltip>
+                        </Label>
+                        <Label fx:id="buildingArmyT4icon" id="buildingBack" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="20"
+                               prefWidth="260" prefHeight="150" >
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT4unitTooltip" text="Unit info window"/>
+                            </tooltip>
+                        </Label>
+                        <JFXButton fx:id="buildingArmyT4buy" id="recButton" onAction="#buyArmyBuilding" AnchorPane.leftAnchor="50"
+                                   AnchorPane.bottomAnchor="15" prefHeight="50" prefWidth="200" text="Buy">
+                            <tooltip>
+                                <Tooltip fx:id="buildingArmyT4priceTooltip" text="Price"/>
+                            </tooltip>
+                        </JFXButton>
+                    </AnchorPane>
+                    <AnchorPane fx:id="unitT4" id="resourcePanel" prefWidth="300" prefHeight="275" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                                AnchorPane.rightAnchor="0" visible="false" >
+                        <Label fx:id="unitT4name" id="smallLabel" text="name" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="30"
+                               prefWidth="240" prefHeight="30" textAlignment="CENTER"/>
+                        <Label fx:id="unitT4icon" AnchorPane.leftAnchor="30" AnchorPane.topAnchor="50"
+                               prefHeight="150" prefWidth="150"/>
+                        <VBox spacing="5" AnchorPane.topAnchor="50" AnchorPane.rightAnchor="25">
+                            <Label fx:id="unitT4atkStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT4hpStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT4rangeStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT4movementStat" id="smallLabel" text="1"/>
+                            <Label fx:id="unitT4type" id="smallLabel" text="none"/>
+                        </VBox>
+<!--                        <JFXButton fx:id="unitT4buy" text="Buy" id="recButton" AnchorPane.leftAnchor="50"-->
+<!--                                   AnchorPane.bottomAnchor="15" prefHeight="50" prefWidth="200" onAction="#buyUnit">-->
+<!--                            <tooltip>-->
+<!--                                <Tooltip fx:id="unitT4priceTooltip" text="price"/>-->
+<!--                            </tooltip>-->
+<!--                        </JFXButton>-->
+                    </AnchorPane>
+                </AnchorPane>
+
+
+
+
+                
+            </HBox>
+
+            <HBox spacing="50">
+                <JFXButton id="recButton" text="Recruit" prefHeight="50" prefWidth="300" onAction="#openFastRecruitPanel"/>
+                <JFXButton id="recButton" text="Manage Resources" prefHeight="50" prefWidth="300" onAction="#openMineBuildingsPanel"/>
+                <JFXButton id="recButton" text="Manage Army" prefHeight="50" prefWidth="300" onAction="#openArmyScreen"/>
+                <JFXButton text="Close" fx:id="close3" id="exit_button"  onAction="#closeArmyBuildingsPanel" prefHeight="50" prefWidth="300"/>
+            </HBox>
+        </VBox>
+
+    </AnchorPane>
+
+    
+    
+</AnchorPane>

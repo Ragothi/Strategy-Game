@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.SVGPath?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="OldVersions.TestBattlefieldController"
+            prefHeight="400.0" prefWidth="600.0" id="armyPanel" fx:id="battlefieldPanel" stylesheets="@../sample/BattlefieldStyle.css">
+
+    <AnchorPane fx:id="airContainer" AnchorPane.leftAnchor="-30" AnchorPane.topAnchor="150"/>
+    <AnchorPane fx:id="landContainer" AnchorPane.leftAnchor="700" AnchorPane.topAnchor="300"/>
+    <AnchorPane fx:id="waterContainer" AnchorPane.leftAnchor="20" AnchorPane.topAnchor="400"/>
+
+
+
+    <AnchorPane fx:id="victoryPanel" id="settingsPanel" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="230" visible="false"
+                AnchorPane.bottomAnchor="50" AnchorPane.rightAnchor="230">
+
+        <Label fx:id="winnerLostLabel" id="text" AnchorPane.topAnchor="315" AnchorPane.leftAnchor="100"/>
+        <Label fx:id="looserLostLabel"  id="text" AnchorPane.topAnchor="490" AnchorPane.leftAnchor="100"/>
+
+        <Label fx:id="victoryGif" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="400" prefHeight="300" prefWidth="300"/>
+
+        <GridPane fx:id="winnerArmyBox" AnchorPane.leftAnchor="100" AnchorPane.topAnchor="350"/>
+        <GridPane fx:id="looserArmyBox" AnchorPane.leftAnchor="100" AnchorPane.topAnchor="525" />
+
+        <JFXButton fx:id="proceed" id="exitButton" onAction="#openMapPanel" prefWidth="200" prefHeight="50"
+                   AnchorPane.bottomAnchor="25" AnchorPane.leftAnchor="440"/>
+    </AnchorPane>
+
+    <AnchorPane fx:id="unitStatPanel" visible="false" AnchorPane.leftAnchor="50"
+                AnchorPane.bottomAnchor="300" prefWidth="210" minWidth="210" maxWidth="210" prefHeight="200">
+        <Label fx:id="unitInfo" text="Unit Name" id="unitName" AnchorPane.topAnchor="5" AnchorPane.leftAnchor="10"/>
+        <Label fx:id="unitInfoIcon" id="scaleImage" AnchorPane.leftAnchor="10" AnchorPane.topAnchor="45"
+               AnchorPane.bottomAnchor="30" AnchorPane.rightAnchor="100" prefWidth="70" prefHeight="150"
+               maxWidth="70"/>
+        <SVGPath fx:id="unitInfoBack" AnchorPane.leftAnchor="10" AnchorPane.topAnchor="40"/>
+        <VBox spacing="5" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="165" >
+            <Label fx:id="unitAtkStat" id="smallLabel" text="1"/>
+            <Label fx:id="unitHpStat" id="smallLabel" text="1"/>
+            <Label fx:id="unitRangeStat" id="smallLabel" text="1"/>
+            <Label fx:id="unitMovementStat" id="smallLabel" text="1"/>
+        </VBox>
+        <Label fx:id="selectedUnitActualPosition" text="(Air,x,y)" id="smallLabel" AnchorPane.bottomAnchor="5" AnchorPane.leftAnchor="50"/>
+    </AnchorPane>
+
+
+</AnchorPane>

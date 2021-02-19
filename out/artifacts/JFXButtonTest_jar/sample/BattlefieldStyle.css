@@ -1,0 +1,112 @@
+#exitButton{
+    -fx-shape: "M 400 300 L 400 200 L 600 200 L 600 300 Z";
+     -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+    -fx-font-size: 25pt;
+    -fx-text-fill: red;
+    -fx-font-weight: bold;
+}
+
+#testtest{
+
+             -fx-background-color: transparent;
+
+}
+
+#testtest:hover{
+    -fx-border-width: 1px;
+    -fx-border-color: orange;
+
+}
+
+#onH:hover{
+
+}
+
+#smallLabel{
+    -fx-font-size: 12pt;
+        -fx-text-fill: black;
+        -fx-font-weight: bold;
+}
+
+#text{
+    -fx-font-size: 16pt;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+#unitName{
+    -fx-font-size: 18pt;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+
+.button{
+       -fx-font-size: 16pt;
+       -fx-text-fill: white;
+       -fx-effect: dropshadow(three-pass-box, black, 10,0,0,0);
+       -fx-shape: "M 400 300 L 350 200 L 450 200 L 500 300 L 400 300 Z";
+       -fx-background-color: green;
+       -fx-background-insets: 0, 0, 0, 0;
+       -fx-background-radius: 0, 0, 0, 0;
+}
+
+.button:focused {
+ -fx-color: transparent;
+ -fx-background-color: transparent;
+     -fx-background-insets: 0, 0, 0, 0;
+     -fx-background-radius:  0, 0, 0, 0;
+}
+
+#maximize{
+        -fx-shape: "M 400 300 L 650 300 L 650 200 L 400 200 L 400 300 Z";
+        -fx-background-repeat: stretch;
+       -fx-background-size: 100% 100%;
+       -fx-background-position: center center;
+}
+
+#settingsPanel{
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+
+#minimize{
+    -fx-shape: "M 400 300 L 650 300 L 650 200 L 400 200 L 400 300 Z";
+        -fx-background-repeat: stretch;
+       -fx-background-size: 100% 100%;
+       -fx-background-position: center center;
+
+}
+#scaleImage{
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+}
+
+#initiative{
+
+    -fx-shape: "M 400 300 L 400 200 L 500 200 L 500 300 Z";
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-font-size: 12pt;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+#left{
+    -fx-shape: "M 400 300 L 350 200 L 400 100 L 350 100 L 300 200 L 350 300 Z";
+    -fx-background-color: purple
+}
+
+#right{
+    -fx-shape: "M 400 300 L 450 200 L 400 100 L 450 100 L 500 200 L 450 300 Z";
+    -fx-background-color: purple
+}
+

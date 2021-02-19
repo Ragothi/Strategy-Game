@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXButton?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.ArmyPanelControl"
+             id="armyPanel" fx:id="armyPanel" stylesheets="@armyPanelStyle.css" >
+
+        <AnchorPane fx:id="airArenaBack" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0"/>
+        <AnchorPane fx:id="landArenaBack" AnchorPane.topAnchor="288" AnchorPane.leftAnchor="0"/>
+        <AnchorPane fx:id="waterArenaBack" AnchorPane.topAnchor="576" AnchorPane.leftAnchor="0"/>
+
+    <JFXButton text="City" onAction="#openCityPanel" fx:id="exitToCity" id="exitButton" AnchorPane.leftAnchor="20" AnchorPane.bottomAnchor="20"
+                prefWidth="200" prefHeight="50"/>
+    <JFXButton text="Map" onAction="#openMapPanel" fx:id="exitToMap" id="exitButton" AnchorPane.leftAnchor="20" AnchorPane.bottomAnchor="90"
+               prefWidth="200" prefHeight="50"/>
+    <JFXButton text="Remove Unit" id="removeButton" fx:id="isRemoveActive" AnchorPane.leftAnchor="20" AnchorPane.bottomAnchor="170"
+               prefWidth="200" prefHeight="50" onAction="#activateRemoveButton"/>
+
+    <AnchorPane fx:id="statInfoPanel" visible="false" id="settingsPanel" AnchorPane.leftAnchor="50" AnchorPane.topAnchor="50" prefWidth="200" prefHeight="200">
+        <Label fx:id="unitInfo" text="Unit Name" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10"/>
+        <Label fx:id="unitInfoIcon" id="scaleImage" AnchorPane.leftAnchor="10" AnchorPane.topAnchor="40"
+               AnchorPane.bottomAnchor="30" AnchorPane.rightAnchor="100" prefWidth="70" prefHeight="150"
+                    maxWidth="70"/>
+        <VBox spacing="5" AnchorPane.topAnchor="50" AnchorPane.rightAnchor="35" >
+            <Label fx:id="unitAtkStat" id="smallLabel" text="1"/>
+            <Label fx:id="unitHpStat" id="smallLabel" text="1"/>
+            <Label fx:id="unitRangeStat" id="smallLabel" text="1"/>
+            <Label fx:id="unitMovementStat" id="smallLabel" text="1"/>
+        </VBox>
+        <Label fx:id="selectedUnitActualPosition" text="(Air,x,y)" id="smallLabel" AnchorPane.bottomAnchor="5" AnchorPane.leftAnchor="50"/>
+        <Label fx:id="unitType" id="smallLabel" text="none" AnchorPane.bottomAnchor="10" AnchorPane.rightAnchor="25"/>
+    </AnchorPane>
+
+    <AnchorPane AnchorPane.topAnchor="30" AnchorPane.leftAnchor="430">
+        <HBox spacing="-15">
+            <JFXButton fx:id="air11" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air12" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air13" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air14" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air15" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air16" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air17" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air18" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air19" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air20" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+        </HBox>
+        <HBox spacing="-15" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="20" >
+            <JFXButton fx:id="air21" id="air" prefWidth="60" prefHeight="20"  onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air22" id="air" prefWidth="60" prefHeight="20"  onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air23" id="air" prefWidth="60" prefHeight="20"  onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air24" id="air" prefWidth="60" prefHeight="20"  onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air25" id="air" prefWidth="60" prefHeight="20"  onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air26" id="air" prefWidth="60" prefHeight="20"  onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air27" id="air" prefWidth="60" prefHeight="20"  onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air28" id="air" prefWidth="60" prefHeight="20"  onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air29" id="air" prefWidth="60" prefHeight="20"  onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air30" id="air" prefWidth="60" prefHeight="20"  onAction="#setSelectedUnitActualPosition"/>
+        </HBox>
+        <HBox spacing="-15" AnchorPane.topAnchor="100" AnchorPane.leftAnchor="40" >
+            <JFXButton fx:id="air31" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air32" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air33" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air34" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air35" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air36" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air37" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air38" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air39" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air40" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+        </HBox>
+        <HBox spacing="-15" AnchorPane.topAnchor="150" AnchorPane.leftAnchor="60" >
+            <JFXButton fx:id="air41" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air42" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air43" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air44" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air45" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air46" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air47" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air48" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air49" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air50" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition" />
+        </HBox>
+        <HBox spacing="-15" AnchorPane.topAnchor="200" AnchorPane.leftAnchor="80" >
+            <JFXButton fx:id="air51" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air52" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air53" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air54" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air55" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air56" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air57" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air58" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air59" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="air60" id="air" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+        </HBox>
+
+
+
+</AnchorPane>
+
+    <AnchorPane AnchorPane.topAnchor="315" AnchorPane.leftAnchor="480">
+        <HBox spacing="-15">
+            <JFXButton fx:id="land11" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land12" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land13" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land14" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land15" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land16" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land17" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land18" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land19" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land20" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+        </HBox>
+        <HBox spacing="-15" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="20" >
+            <JFXButton fx:id="land21" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land22" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land23" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land24" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land25" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land26" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land27" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land28" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land29" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land30" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+        </HBox>
+        <HBox spacing="-15" AnchorPane.topAnchor="100" AnchorPane.leftAnchor="40" >
+            <JFXButton fx:id="land31" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land32" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land33" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land34" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land35" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land36" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land37" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land38" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land39" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land40" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+        </HBox>
+        <HBox spacing="-15" AnchorPane.topAnchor="150" AnchorPane.leftAnchor="60" >
+            <JFXButton fx:id="land41" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land42" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land43" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land44" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land45" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land46" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land47" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land48" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land49" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land50" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+        </HBox>
+        <HBox spacing="-15" AnchorPane.topAnchor="200" AnchorPane.leftAnchor="80" >
+            <JFXButton fx:id="land51" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land52" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land53" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land54" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land55" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land56" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land57" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land58" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land59" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="land60" id="land" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+        </HBox>
+
+
+
+    </AnchorPane>
+
+    <AnchorPane AnchorPane.topAnchor="595" AnchorPane.leftAnchor="530">
+        <HBox spacing="-15">
+            <JFXButton fx:id="water11" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water12" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water13" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water14" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water15" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water16" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water17" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water18" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water19" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water20" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+        </HBox>
+        <HBox spacing="-15" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="20" >
+            <JFXButton fx:id="water21" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water22" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water23" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water24" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water25" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water26" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water27" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water28" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water29" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water30" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+        </HBox>
+        <HBox spacing="-15" AnchorPane.topAnchor="100" AnchorPane.leftAnchor="40" >
+            <JFXButton fx:id="water31" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water32" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water33" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water34" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water35" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water36" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water37" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water38" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water39" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water40" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+        </HBox>
+        <HBox spacing="-15" AnchorPane.topAnchor="150" AnchorPane.leftAnchor="60" >
+            <JFXButton fx:id="water41" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water42" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water43" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water44" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water45" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water46" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water47" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water48" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water49" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water50" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+        </HBox>
+        <HBox spacing="-15" AnchorPane.topAnchor="200" AnchorPane.leftAnchor="80" >
+            <JFXButton fx:id="water51" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water52" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water53" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water54" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water55" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water56" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water57" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water58" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water59" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+            <JFXButton fx:id="water60" id="water" prefWidth="60" prefHeight="20" onAction="#setSelectedUnitActualPosition"/>
+        </HBox>
+
+
+
+    </AnchorPane>
+
+    <VBox spacing="30" AnchorPane.rightAnchor="30" AnchorPane.topAnchor="30">
+        <AnchorPane prefHeight="250" prefWidth="300" fx:id="airUnits" id="settingsPanel">
+            <VBox AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" spacing="5">
+                <Label text="Unit Name"/>
+                <Label fx:id="airName1" text="name1"/>
+                <Label fx:id="airName2" text="name1"/>
+                <Label fx:id="airName3" text="name1"/>
+            </VBox>
+            <VBox AnchorPane.topAnchor="10" AnchorPane.leftAnchor="150" spacing="5">
+                <Label text="Amount"/>
+                <Label fx:id="airAmount1" text="   0"/>
+                <Label fx:id="airAmount2" text="   0"/>
+                <Label fx:id="airAmount3" text="   0"/>
+            </VBox>   
+            <VBox AnchorPane.topAnchor="10" AnchorPane.rightAnchor="10" spacing="5">
+                <Label text="Set"/>
+                <JFXButton fx:id="airSet1" text="x" prefHeight="30" prefWidth="30" maxHeight="30" maxWidth="30" minHeight="30" minWidth="30"
+                           id="setButton" onAction="#showUnitInfo"/>
+                <JFXButton fx:id="airSet2" text="x" prefHeight="30" prefWidth="30" maxHeight="30" maxWidth="30" minHeight="30" minWidth="30"
+                           id="setButton" onAction="#showUnitInfo"/>
+                <JFXButton fx:id="airSet3" text="x" prefHeight="30" prefWidth="30" maxHeight="30" maxWidth="30" minHeight="30" minWidth="30"
+                           id="setButton" onAction="#showUnitInfo"/>
+            </VBox>
+
+
+        </AnchorPane >
+
+        <AnchorPane prefHeight="250" prefWidth="300" fx:id="landUnits" id="settingsPanel">
+            <VBox AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" spacing="5">
+                <Label fx:id="landName1" text="name1"/>
+                <Label fx:id="landName2" text="name1"/>
+                <Label fx:id="landName3" text="name1"/>
+                <Label fx:id="landName4" text="name1"/>
+                <Label fx:id="landName5" text="name1"/>
+                <Label fx:id="landName6" text="name1" wrapText="true" prefWidth="120"/>
+            </VBox>
+            <VBox AnchorPane.topAnchor="10" AnchorPane.leftAnchor="150" spacing="5">
+                <Label fx:id="landAmount1" text="   0"/>
+                <Label fx:id="landAmount2" text="   0"/>
+                <Label fx:id="landAmount3" text="   0"/>
+                <Label fx:id="landAmount4" text="   0"/>
+                <Label fx:id="landAmount5" text="   0"/>
+                <Label fx:id="landAmount6" text="   0"/>
+            </VBox>
+            <VBox AnchorPane.topAnchor="10" AnchorPane.rightAnchor="10" spacing="8">
+                <JFXButton fx:id="landSet1" text="x" prefHeight="30" prefWidth="30" maxHeight="30" maxWidth="30" minHeight="30" minWidth="30"
+                           id="setButton" onAction="#showUnitInfo"/>
+                <JFXButton fx:id="landSet2" text="x" prefHeight="30" prefWidth="30" maxHeight="30" maxWidth="30" minHeight="30" minWidth="30"
+                           id="setButton" onAction="#showUnitInfo"/>
+                <JFXButton fx:id="landSet3" text="x" prefHeight="30" prefWidth="30" maxHeight="30" maxWidth="30" minHeight="30" minWidth="30"
+                           id="setButton" onAction="#showUnitInfo"/>
+                <JFXButton fx:id="landSet4" text="x" prefHeight="30" prefWidth="30" maxHeight="30" maxWidth="30" minHeight="30" minWidth="30"
+                           id="setButton" onAction="#showUnitInfo"/>
+                <JFXButton fx:id="landSet5" text="x" prefHeight="30" prefWidth="30" maxHeight="30" maxWidth="30" minHeight="30" minWidth="30"
+                           id="setButton" onAction="#showUnitInfo"/>
+                <JFXButton fx:id="landSet6" text="x" prefHeight="30" prefWidth="30" maxHeight="30" maxWidth="30" minHeight="30" minWidth="30"
+                           id="setButton" onAction="#showUnitInfo"/>
+            </VBox>
+        </AnchorPane>
+
+        <AnchorPane prefHeight="250" prefWidth="300" fx:id="waterUnits" id="settingsPanel" >
+            <VBox AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" spacing="5">
+                <Label fx:id="waterName1" text="name1" wrapText="true" prefWidth="120"/>
+                <Label fx:id="waterName2" text="name1"/>
+                <Label fx:id="waterName3" text="name1"/>
+            </VBox>
+            <VBox AnchorPane.topAnchor="10" AnchorPane.leftAnchor="150" spacing="5">
+                <Label fx:id="waterAmount1" text="   0"/>
+                <Label fx:id="waterAmount2" text="   0"/>
+                <Label fx:id="waterAmount3" text="   0"/>
+            </VBox>
+            <VBox AnchorPane.topAnchor="10" AnchorPane.rightAnchor="10" spacing="5">
+                <JFXButton fx:id="waterSet1" text="x" prefHeight="30" prefWidth="30" maxHeight="30" maxWidth="30" minHeight="30" minWidth="30"
+                           id="setButton" onAction="#showUnitInfo"/>
+                <JFXButton fx:id="waterSet2" text="x" prefHeight="30" prefWidth="30" maxHeight="30" maxWidth="30" minHeight="30" minWidth="30"
+                           id="setButton" onAction="#showUnitInfo"/>
+                <JFXButton fx:id="waterSet3" text="x" prefHeight="30" prefWidth="30" maxHeight="30" maxWidth="30" minHeight="30" minWidth="30"
+                           id="setButton" onAction="#showUnitInfo"/>
+            </VBox>
+        </AnchorPane>
+
+    </VBox>
+
+</AnchorPane>

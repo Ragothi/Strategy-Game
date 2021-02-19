@@ -1,0 +1,92 @@
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane fx:id="mainMenuPanel" id="MainMenuPanel" fx:controller="sample.MainMenuController" xmlns:fx="http://javafx.com/fxml" stylesheets="@mainMenuStyle.css">
+
+    <VBox spacing="20" AnchorPane.topAnchor="250" AnchorPane.leftAnchor="650">
+        <JFXButton text="New Game" fx:id="newGameButton"  id="new_game_button"  prefHeight="80" prefWidth="250" onAction="#showStartNewGamePanel"/>
+        <JFXButton text="Load Game" fx:id="load_button"   id="load_button"   prefHeight="80" prefWidth="250" onAction="#loadGame"/>
+        <JFXButton text="Settings" fx:id="settingsButton"  id="settings_button" onAction="#settingsOn"
+                prefHeight="80" prefWidth="250"/>
+        <JFXButton  text="Exit" fx:id="exit_button"  id="exit_button" onAction="#exitButton"  prefHeight="80" prefWidth="250"/>
+    </VBox>
+
+    <AnchorPane fx:id="settingsPanel" visible="false" id="settingsPanel"
+            prefHeight="500" prefWidth="900"  maxWidth="900" maxHeight="500" AnchorPane.topAnchor="200"
+               AnchorPane.leftAnchor="300">
+        <VBox spacing="20" AnchorPane.leftAnchor="100" AnchorPane.topAnchor="30">
+            <JFXCheckBox fx:id="fullScreenCheckBox"  id="fullScreenCheckBox"
+                         text="FullScreen mode on?" onAction="#fullScreenOn" selected="true"/>
+            <HBox>
+                <Label text="Music Volume: " id="fullScreenCheckBox"/>
+                <Slider fx:id="volume" onMouseDragged="#changeVolume" id="fullScreenCheckBox" snapToTicks="true"
+                        max="1" value="0.2" majorTickUnit="0.01" minorTickCount="0"  blockIncrement="0.01" minWidth="250"/>
+            </HBox>
+        </VBox>
+        <JFXButton fx:id="settings_close" id="settings_close" text="Close" onAction="#settingsOff" prefHeight="80" prefWidth="250"
+        AnchorPane.leftAnchor="300" AnchorPane.bottomAnchor="50"/>
+    </AnchorPane>
+
+    <AnchorPane fx:id="numberOfPlayersBox" id="settingsPanel" prefHeight="300" prefWidth="500"
+                minHeight="300" minWidth="500" maxHeight="300" maxWidth="500"
+                AnchorPane.topAnchor="200" AnchorPane.leftAnchor="530" visible="false">
+
+            <Label  text="Select number of Players:" id="sectorDescriptionLabel" textAlignment="CENTER"
+                    AnchorPane.leftAnchor="50" AnchorPane.topAnchor="50" prefWidth="400" wrapText="true"/>
+            <HBox spacing="50" AnchorPane.bottomAnchor="50" AnchorPane.leftAnchor="50">
+                <JFXButton fx:id="onePlayer" id="numbButt" text="1" onAction="#gameType" prefWidth="100" prefHeight="100"
+                           minWidth="100" minHeight="100" maxWidth="100" maxHeight="100" />
+                <JFXButton fx:id="twoPlayers" id="numbButt" text="2" onAction="#gameType" prefWidth="100" prefHeight="100"
+                           minWidth="100" minHeight="100" maxWidth="100" maxHeight="100" />
+                <JFXButton fx:id="threePlayers" id="numbButt" text="3" onAction="#gameType" prefWidth="100" prefHeight="100"
+                           minWidth="100" minHeight="100" maxWidth="100" maxHeight="100" />
+            </HBox>
+
+    </AnchorPane>
+
+
+    <AnchorPane fx:id="choseFractionPanel" visible="false" id="choseFractionPanel"
+               prefHeight="600" prefWidth="1000" AnchorPane.topAnchor="100" AnchorPane.leftAnchor="50">
+
+            <Label fx:id="fractionTittle" id="fraction_title" text="Choose Your Fraction:"
+                   AnchorPane.topAnchor="30" AnchorPane.leftAnchor="50" textAlignment="CENTER"/>
+            <HBox spacing="80" AnchorPane.leftAnchor="50" AnchorPane.topAnchor="110">
+                <Label fx:id="jungle_label"      id="jungle_label"    prefHeight="300" prefWidth="250"/>
+                <Label fx:id="atlantis_label"   id="atlantis_label"  prefHeight="300" prefWidth="250" />
+                <Label fx:id="cyberpunk_label"  id="cyberpunk_label" prefHeight="300" prefWidth="250"/>
+            </HBox>
+
+            <fx:define>
+                <ToggleGroup fx:id="fractionToggleGroup"/>
+            </fx:define>
+
+            <HBox AnchorPane.leftAnchor="80" AnchorPane.bottomAnchor="120" spacing="130">
+                <ToggleButton fx:id="toggleJungle" id="toggle_jungle"  toggleGroup="$fractionToggleGroup" selected="true"
+                    prefHeight="60" prefWidth="200" onAction="#selectJungle"/>
+                <ToggleButton fx:id="toggleAtlantis" id="toggle_atlantis"  toggleGroup="$fractionToggleGroup"
+                              prefHeight="60" prefWidth="200" onAction="#selectAtlantis"/>
+                <ToggleButton fx:id="toggleCyberpunk" id="toggle_cyberpunk"  toggleGroup="$fractionToggleGroup"
+                              prefHeight="60" prefWidth="200" onAction="#selectCyberpunk"/>
+            </HBox>
+
+            <HBox AnchorPane.leftAnchor="50" AnchorPane.bottomAnchor="30" spacing="500">
+                <JFXButton fx:id="select" id="select"  onAction="#selectPlayer" prefWidth="200" prefHeight="80"/>
+                <JFXButton fx:id="cancel" id="cancel"  onAction="#hideStartNewGamePanel" prefWidth="200" prefHeight="80"/>
+            </HBox>
+
+
+
+
+    </AnchorPane>
+    <AnchorPane fx:id="selectedFractionPanel" visible="false" id="selectedFractionPanel"
+                AnchorPane.topAnchor="100" AnchorPane.rightAnchor="50" prefWidth="400" prefHeight="600">
+        <VBox spacing="10" AnchorPane.topAnchor="30" AnchorPane.leftAnchor="20" prefWidth="300" prefHeight="600">
+            <Label fx:id="fractionName" id="fractionName" />
+            <Label fx:id="fractionDescription" id="fractionDescription" wrapText="true" />
+        </VBox>
+
+    </AnchorPane>
+
+</AnchorPane>
+
+

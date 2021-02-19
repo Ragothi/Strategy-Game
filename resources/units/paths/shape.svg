@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+              "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="2.08333in" height="2.08333in"
+     viewBox="0 0 150 150">
+  <path id="Zaznaczenie"
+        fill="none" stroke="black" stroke-width="1"
+        d="m 80 20 l 40 -20 l 40 20 l 40 -20 l 40 20 l 40 -20 l 40 20 l 40 -20 l 40 20 l 40 -20 l 40 20 l 40 -20 l 40 20 l 40 -20 l 40 20
+		 l 40 -20 l 40 20 l 40 -20 l 40 20 l 0 40 l 40 20 l 0 40 l 40 20 l 0 40 l -40 20 l 0 40 l 40 20 l 0 40 l -40 20 l 0 40 l 40 20 
+		 l 0 40 l -40 20 l 0 40 l -40 20 l 0 40 l -40 20 l -40 -20 l -40 20 l -40 -20 l -40 20 l -40 -20 l -40 20 l -40 -20 l -40 20
+		 l -40 -20 l -40 20 l -40 -20 l -40 20 l -40 -20 l -40 20 l -40 -20 l -40 20 l-40 -20 l 0 -40 l -40 -20 l 0 -40 l -40 -20 l 0 -40 
+		 l 40 -20 l 0 -40 l -40 -20 l 0 -40 l 40 -20 l 0 -40 l -40 -20 l 0 -40 l 40 -20 l 0 -40 l 40 -20 l 0 -40 Z" />
+</svg>

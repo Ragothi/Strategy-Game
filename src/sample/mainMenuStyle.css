@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'Joystix Monospace';
+    font-style: normal;
+    font-weight: 300;
+    src: url("file:/E:/Studia/java/TIM/JavaFX/JFXButtonTest/resources/pixel.ttf");
+}
+
+.root {
+    -fx-font-family: "Joystix Monospace";
+}
+
+#MainMenuPanel{
+    -fx-font-family: "Joystix Monospace";
+
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#settingsPanel{
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+    }
+
+
+#choseFractionPanel{
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#selectedFractionPanel{
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#fractionName{
+    -fx-font-size: 16pt;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+#fractionDescription{
+    -fx-font-size: 12pt;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+#numbButt{
+    -fx-font-family: "Joystix Monospace";
+
+       -fx-shape: "M 400 300 L 650 300 L 650 200 L 400 200 L 400 300 Z";
+       -fx-background-repeat: stretch;
+       -fx-background-size: 100% 100%;
+       -fx-background-position: center center;
+        -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+       -fx-font-size: 20pt;
+       -fx-text-fill: black;
+       -fx-font-weight: bold;
+}
+
+#sectorDescriptionLabel{
+    -fx-font-size: 20pt;
+        -fx-text-fill: black;
+        -fx-font-weight: bold;
+}
+
+#jungle_label{
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#atlantis_label{
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#cyberpunk_label{
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+.button{
+    -fx-font-family: "Joystix Monospace";
+        -fx-font-size: 16pt;
+       -fx-text-fill: white;
+       -fx-effect: dropshadow(three-pass-box, black, 10,0,0,0);
+}
+
+#toggle_jungle{
+    -fx-effect: dropshadow(three-pass-box, black, 10,0,0,0);
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#toggle_atlantis{
+    -fx-effect: dropshadow(three-pass-box, black, 10,0,0,0);
+        -fx-background-repeat: stretch;
+        -fx-background-size: 100% 100%;
+        -fx-background-position: center center;
+        -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#toggle_cyberpunk{
+            -fx-background-repeat: stretch;
+            -fx-background-size: 100% 100%;
+            -fx-background-position: center center;
+            -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, black, 10,0,0,0);
+}
+
+#fraction_title{
+-fx-font-size: 28pt;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+#cancel{
+    -fx-background-size: 100% 100%;
+}
+
+#select{
+    -fx-background-size: 100% 100%;
+}
+
+#exit_button{
+    -fx-background-size: 100% 100%;
+}
+
+#settings_button{
+    -fx-shape: "M 400 300 L 650 300 L 650 200 L 400 200 L 400 300 Z";
+    -fx-background-size: 100% 100%;
+}
+
+#settings_close{
+    -fx-shape: "M 400 300 L 650 300 L 650 200 L 400 200 L 400 300 Z";
+    -fx-background-size: 100% 100%;
+}
+
+#new_game_button{
+    -fx-shape: "M 400 300 L 650 300 L 650 200 L 400 200 L 400 300 Z";
+    -fx-background-size: 100% 100%;
+}
+
+#load_button{
+    -fx-shape: "M 400 300 L 650 300 L 650 200 L 400 200 L 400 300 Z";
+    -fx-background-size: 100% 100%;
+}
+
+#fullScreenCheckBox{
+    -fx-font-weight: bold;
+    -fx-font-size: 24;
+    -fx-text-fill: black;
+}
+
+
+

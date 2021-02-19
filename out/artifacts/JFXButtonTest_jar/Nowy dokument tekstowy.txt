@@ -1,0 +1,4 @@
+set PATH_TO_FX="C:\Program Files\Java\jdk-11.0.8\lib"
+javac --module-path %PATH_TO_FX% --add-modules javafx.controls HelloFX.java
+javac --module-path %PATH_TO_FX% --add-modules javafx.controls,javafx.fxml HelloFX.java
+java --module-path %PATH_TO_FX% --add-modules javafx.controls HelloFX

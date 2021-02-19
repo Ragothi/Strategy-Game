@@ -1,0 +1,101 @@
+#cityPanel{
+
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#backgroundImageView{
+  -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#resourcePanel{
+-fx-background-image: url("file:/E:/Studia/java/TIM/JavaFX/JFXButtonTest/resources/backgrounds/settings.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+.label{
+        -fx-font-size: 20pt;
+       -fx-text-fill: black;
+        -fx-font-weight: bold;
+
+}
+
+#buildingBack{
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#smallLabel{
+-fx-font-size: 14pt;
+}
+
+#recButton{
+    -fx-shape: "M 200 350 L 200 250 L 450 250 L 450 350 L 200 350 Z";
+
+}
+
+#buyAll{
+    -fx-shape: "M 200 350 L 200 250 L 450 250 L 450 350 L 200 350 Z";
+    -fx-font-size: 20pt;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+#miniCloseButton{
+    -fx-shape: "M 200 350 L 200 250 L 450 250 L 450 350 L 200 350 Z";
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+}
+
+#miniPlusButton{
+    -fx-shape: "M 200 350 L 200 250 L 450 250 L 450 350 L 200 350 Z";
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+}
+
+#miniUnitName{
+    -fx-font-size: 14pt;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+#cityNameLabel{
+    -fx-font-size: 35pt;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+.button{
+       -fx-font-size: 16pt;
+       -fx-text-fill: white;
+       -fx-effect: dropshadow(three-pass-box, black, 10,0,0,0);
+       -fx-shape: "M 250 450 L 250 300 L 400 225 L 550 300 L 550 450 L 400 525 L 250 450 Z";
+       -fx-background-color: green;
+}
+
+#manageResourcesButton{
+               -fx-shape: "M 150 350 L 150 200 L 550 200 L 550 350 L 150 350 Z";
+}
+
+#exit_button{
+    -fx-background-size: 100% 100%;
+    -fx-font-size: 25pt;
+    -fx-text-fill: red;
+    -fx-font-weight: bold;
+}
+
+#slider{
+
+}
